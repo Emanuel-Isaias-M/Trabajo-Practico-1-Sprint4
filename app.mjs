@@ -1,5 +1,5 @@
 import express from 'express';
-import { connectDB } from path.join(__dirname, 'config', 'dbconfig.mjs');
+import { connectDB } from './config/dbconfig.mjs';
 import superHeroRoutes from './routes/superHeroRoutes.mjs';
 import path from 'path';
 import { fileURLToPath } from 'url';
