@@ -1,0 +1,32 @@
+<h1 class="titulo-superheroes">¡Superhéroes en Acción!</h1>
+
+<div class="grid-container">
+  <% superheroes.forEach(superheroe => { %>
+    <div class="card">
+      <h3 class="nombre-superheroe"><%= superheroe.nombreSuperHeroe %></h3>
+      <small class="nombre-real"><strong>Nombre real:</strong> <%= superheroe.nombreReal %></small>
+      <p class="edad"><strong>Edad:</strong> <%= superheroe.edad %></p>
+      <p class="planeta"><strong>Planeta:</strong> <%= superheroe.planetaOrigen %></p>
+      <p class="debilidad"><strong>Debilidad:</strong> <%= superheroe.debilidad.join(', ') %></p>
+      <p class="poderes"><strong>Poderes:</strong> <%= superheroe.poderes.join(', ') %></p>
+      <p class="aliados"><strong>Aliados:</strong> <%= superheroe.aliados.join(', ') %></p>
+      <p class="enemigos"><strong>Enemigos:</strong> <%= superheroe.enemigos.join(', ') %></p>
+
+      <div class="acciones">
+        <a href="/api/formulario/modificar-heroe/<%= superheroe._id %>" class="link-editar">
+          <button class="edit-btn">Editar</button>
+        </a>
+        <form action="/api/heroes/borrar-id/<%= superheroe._id %>?_method=DELETE" method="POST" class="form-borrar" style="display:inline;" onsubmit="return confirm('¿Seguro que querés borrar a <%= superheroe.nombreSuperHeroe %>?');">
+          <button type="submit" class="delete-btn">Borrar</button>
+        </form>
+      </div>
+    </div>
+  <% }) %>
+</div>
+<br>
+<div class="contenedor-boton">
+  <a class="agregar-btn" href="/api/formulario/crear">+ Agregar Superhéroe</a>
+</div>
+
+
+

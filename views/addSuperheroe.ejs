@@ -1,0 +1,32 @@
+<br> <br>
+<h1 class="titulo-agregar">Agregar Superhéroe</h1>
+
+<form action="/api/heroes/crear" method="post" class="form-agregar">
+  <label for="nombreSuperHeroe" class="label-agregar">Nombre del Superhéroe:</label>
+  <input type="text" name="nombreSuperHeroe" class="input-agregar" required minlength="3" maxlength="60">
+
+  <label for="nombreReal" class="label-agregar">Nombre Real:</label>
+  <input type="text" name="nombreReal" class="input-agregar" required>
+
+  <label for="edad" class="label-agregar">Edad:</label>
+  <input type="number" name="edad" class="input-agregar" required min="0">
+
+  <label for="planetaOrigen" class="label-agregar">Planeta de origen:</label>
+  <input type="text" name="planetaOrigen" class="input-agregar" required>
+
+  <label for="debilidad" class="label-agregar">Debilidades (separadas por coma):</label>
+  <input type="text" name="debilidad" class="input-agregar">
+
+  <label for="poderes" class="label-agregar">Poderes (separados por coma):</label>
+  <input type="text" name="poderes" class="input-agregar" required>
+
+  <label for="aliados" class="label-agregar">Aliados (separados por coma):</label>
+  <input type="text" name="aliados" class="input-agregar">
+
+  <label for="enemigos" class="label-agregar">Enemigos (separados por coma):</label>
+  <input type="text" name="enemigos" class="input-agregar">
+
+  <button type="submit" class="btn-agregar">🚀 Agregar</button>
+</form>
+
+

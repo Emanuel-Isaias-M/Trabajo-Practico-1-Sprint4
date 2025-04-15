@@ -1,0 +1,34 @@
+
+<body>
+  <h1 class="titulo-editar">Editar Superhéroe</h1>
+
+  <form action="/api/heroes/actualizar/<%= superheroeaEditar._id %>?_method=PUT" method="post" class="form-editar">
+    <label for="nombreSuperHeroe" class="label-editar">Nombre del Superhéroe:</label>
+    <input type="text" name="nombreSuperHeroe" class="input-editar" required value="<%= superheroeaEditar.nombreSuperHeroe %>">
+
+    <label for="nombreReal" class="label-editar">Nombre Real:</label>
+    <input type="text" name="nombreReal" class="input-editar" required value="<%= superheroeaEditar.nombreReal %>">
+
+    <label for="edad" class="label-editar">Edad:</label>
+    <input type="number" name="edad" class="input-editar" min="0" required value="<%= superheroeaEditar.edad %>">
+
+    <label for="planetaOrigen" class="label-editar">Planeta de origen:</label>
+    <input type="text" name="planetaOrigen" class="input-editar" required value="<%= superheroeaEditar.planetaOrigen %>">
+
+    <label for="debilidad" class="label-editar">Debilidad (separadas por coma):</label>
+    <input type="text" name="debilidad" class="input-editar" value="<%= superheroeaEditar.debilidad.join(', ') %>">
+
+    <label for="poderes" class="label-editar">Poderes (separados por coma):</label>
+    <input type="text" name="poderes" class="input-editar" value="<%= superheroeaEditar.poderes.join(', ') %>">
+
+    <label for="aliados" class="label-editar">Aliados (separados por coma):</label>
+    <input type="text" name="aliados" class="input-editar" value="<%= superheroeaEditar.aliados.join(', ') %>">
+
+    <label for="enemigos" class="label-editar">Enemigos (separados por coma):</label>
+    <input type="text" name="enemigos" class="input-editar" value="<%= superheroeaEditar.enemigos.join(', ') %>">
+
+    <button type="submit" class="btn-editar">💾 Guardar Cambios</button>
+  </form>
+</body>
+
+

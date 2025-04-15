@@ -1,26 +1,46 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
+    background-color: #f0f0f0;
+    height: auto;
+    padding-bottom: 120px; /* espacio para que no tape el footer */
 }
+
+.grid-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centra horizontalmente */
+    gap: 20px;
+
+}
+
 
 .navbar {
     display: flex;
     align-items: center;
-    background-color: #333;
-    padding: 10px 20px;
+    padding: 15px 30px;
     color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+                      url('/images/superheroes-marvel.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
+
 .navbar .logo {
-    width: 50px;
+    width: 60px;
     margin-right: 20px;
+    transform: scale(1.2);
 }
 
 .navbar ul {
     list-style: none;
     display: flex;
-    gap: 20px;
+    gap: 25px;
     margin: 0;
     padding: 0;
 }
@@ -28,21 +48,322 @@ body {
 .navbar ul li a {
     color: white;
     text-decoration: none;
+    font-weight: bold;
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 10px;
+    text-transform: uppercase;
+    font-size: 16px;
+    letter-spacing: 1px;
+}
+
+.navbar ul li a:hover {
+    color: #f39c12; /* Amarillo brillante */
 }
 
 .navbar ul li a img {
-    width: 20px;
+    width: 24px;
 }
 
 footer {
     text-align: center;
-    padding: 10px;
-    background-color: #333;
+    padding: 15px;
+    background-color: #2c3e50; /* Azul oscuro */
     color: white;
     position: fixed;
     bottom: 0;
     width: 100%;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2);
+}
+
+footer .logo {
+    width: 40px;
+    margin-right: 10px;
+}
+
+footer a {
+    color: #f39c12;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Clases para superhéroes */
+
+.titulo-superheroes {
+    text-align: center;
+    font-size: 36px;
+    color: #e74c3c; /* Rojo brillante */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    margin-bottom: 30px;
+}
+
+.card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+    margin-bottom: 20px;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card h3 {
+    font-size: 28px;
+    color: #e74c3c; /* Rojo brillante */
+    margin-top: 0;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+.card small {
+    color: #95a5a6; /* Gris claro */
+}
+
+.card .nombre-superheroe {
+    font-size: 26px;
+    font-weight: bold;
+    color: #e74c3c;
+}
+
+.card .nombre-real {
+    font-size: 16px;
+    color: #95a5a6;
+}
+
+.card .edad,
+.card .planeta,
+.card .debilidad,
+.card .poderes,
+.card .aliados,
+.card .enemigos {
+    font-size: 16px;
+    margin-bottom: 8px;
+    color: #34495e; /* Gris oscuro */
+}
+
+.card .acciones {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.card .edit-btn,
+.card .delete-btn {
+    padding: 8px 15px;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s;
+}
+
+.card .edit-btn {
+    background-color: #27ae60; /* Verde vibrante */
+    color: white;
+}
+
+.card .edit-btn:hover {
+    background-color: #2ecc71; /* Verde más claro */
+}
+
+.card .delete-btn {
+    background-color: #c0392b; /* Rojo oscuro */
+    color: white;
+}
+
+.card .delete-btn:hover {
+    background-color: #e74c3c; /* Rojo brillante */
+}
+
+.contenedor-boton {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.agregar-btn {
+    display: block;
+    margin: 0 auto;
+    background-color: #e74c3c;
+    color: white;
+    padding: 12px 24px;
+    text-align: center;
+    font-size: 16px;
+    border-radius: 8px;
+    text-decoration: none;
+    width: fit-content;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: background-color 0.3s;
+}
+
+.agregar-btn:hover {
+    background-color: #c0392b;
+}
+
+
+/* Título */
+.titulo-editar {
+    text-align: center;
+    color: #2c3e50;
+    font-size: 2rem;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+/* Formulario de edición */
+.form-editar {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Etiquetas */
+.label-editar {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 6px;
+    color: #333;
+}
+
+/* Entradas de texto */
+.input-editar {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s ease;
+}
+
+/* Cuando el usuario hace foco en el input */
+.input-editar:focus {
+    border-color: #2980b9;
+    background-color: #fff;
+    outline: none;
+}
+
+/* Botón de guardar */
+.btn-editar {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: #3498db;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Hover en el botón de guardar */
+.btn-editar:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+}
+
+/* Para el botón cuando está en estado activo */
+.btn-editar:active {
+    transform: translateY(0);
+}
+
+/* Espaciado para el formulario */
+.form-editar .input-editar:last-child {
+    margin-bottom: 0;
+}
+
+
+
+/* Título */
+.titulo-agregar {
+    text-align: center;
+    color: #2c3e50;
+    font-size: 2rem;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+/* Formulario de agregar superhéroe */
+.form-agregar {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Etiquetas */
+.label-agregar {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 6px;
+    color: #333;
+    font-size: 16px;
+}
+
+/* Entradas de texto */
+.input-agregar {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s ease;
+}
+
+/* Cuando el usuario hace foco en el input */
+.input-agregar:focus {
+    border-color: #2980b9;
+    background-color: #fff;
+    outline: none;
+}
+
+/* Botón de agregar */
+.btn-agregar {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: #3498db;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Hover en el botón de agregar */
+.btn-agregar:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+}
+
+/* Para el botón cuando está en estado activo */
+.btn-agregar:active {
+    transform: translateY(0);
+}
+
+/* Espaciado para el formulario */
+.form-agregar input:last-child {
+    margin-bottom: 0;
 }
